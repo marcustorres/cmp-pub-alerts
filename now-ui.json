@@ -1,8 +1,14 @@
 {
 	"components": {
 	    "cmp-public-alerts": {
-	        "innerComponents": []
+			"innerComponents": [],
+			"uiBuilder": {
+				"associatedTypes": ["global.core"],
+				"label": "Safety alerts",
+				"icon": "circle-exclamation-outline",
+				"description": "Safety alert feed"
+			}
 	    }
 	},
-	"scopeName": "x_snc_cmppubalerts"
+	"scopeName": "x_163438_sftylrts"
 }
