@@ -1,0 +1,39 @@
+@import '@servicenow/sass-kit/host';
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three unequal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+    height: 40px; /* Should be removed. Only for demonstration */
+  }
+  
+  .left, .middle {
+    width: 20%;
+  }
+  
+  .right {
+    width: 60%;
+  }
+  
+  .titleRow {
+    background-color: darkgray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .row {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
