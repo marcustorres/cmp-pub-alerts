@@ -12,6 +12,7 @@ const publicAlerts = [
 ]
 
 const view = (state, {updateState}) => {
+	const {alerts} = state;
 	return (
 		<div>
 			<div class="titleRow">
@@ -24,18 +25,21 @@ const view = (state, {updateState}) => {
 				<div class="column right">
 					<h2>Description</h2>
 				</div>
-			</div>		
-			<div class="row">
-				<div class="column left">
-					<p></p>
-				</div>
-				<div class="column middle">
-					<p></p>
-				</div>
-				<div class="column right">
-					<p></p>
-				</div>
 			</div>
+			{alerts.array.forEach(element => {
+				<div class="row">
+					<div class="column left">
+						<p>{element[0]}</p>
+					</div>
+					<div class="column middle">
+						<p>{element[1]}</p>
+					</div>
+					<div class="column right">
+						<p>{element[2]}</p>
+					</div>
+				</div>
+			});			
+			}
 		</div>
 	);
 };
@@ -43,5 +47,11 @@ const view = (state, {updateState}) => {
 createCustomElement('cmp-public-alerts', {
 	renderer: {type: snabbdom},
 	view,
+	properties: {
+		alerts
+	},
+	initialState: {
+		alerts = publicAlerts
+	},
 	styles: styles
 });
